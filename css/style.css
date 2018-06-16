@@ -1,0 +1,39 @@
+body{
+  background: url("../img/coffee_bean_bkrd.jpg");
+  background-size: cover;
+}
+
+header{
+  display: flex;
+  height: 250px;
+  font-family: "Fredoka One", serif;
+  font-size: 90px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+header div {
+  background-color: rgba(240,128,128, 0.5);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+@media (max-width: 653px) {
+  main{
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+section{
+  border: 5px solid white;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
