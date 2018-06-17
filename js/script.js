@@ -8,25 +8,24 @@ $(document).ready(function() {
   totalCPS: 0
 };
 
-setInterval(goGo,1000);
+setInterval(moreCoffee,1000);
 
-function goGo() {
+function moreCoffee() {
   data.totalCups += data.totalCPS;
   data.totalCurrent += data.totalCPS;
-  $("#wheel").css({ 'transform': 'rotate(' + data.totalCups + 'deg)'});
   updateReport();
 }
 
 function updateReport() {
   $("#currentTotal").text(Math.floor(data.totalCurrent));
-  $("#cps").text((data.totalCPS/70.4).toFixed(3));
+  $("#cps").text((data.totalCPS).toFixed(1));
 }
 
 
 $("#cup").click(function (){
   data.totalCups ++;
   data.totalCurrent ++;
-  console.log(data.totalCups);
+  $("#cup").animate({ 'transform': 'shake'});
   updateReport();
 });
 
