@@ -1,9 +1,11 @@
 body{
+  /* made using patternico */
   background: url("../img/pattern_bkrd.png");
   font-family: Lato, sans-serif;
 }
 
 h1{
+  /* bubble letters  */
   font-family: "Fredoka One", serif;
   font-size: 40px;
   margin: 10px;
@@ -31,6 +33,8 @@ main{
   grid-template-columns: 1fr 400px 1fr;
 }
 
+/* puts the pieces in one column instead of three on small screens */
+
 @media (max-width: 665px) {
   main{
     grid-template-columns: 1fr;
@@ -55,12 +59,14 @@ section{
   height: 400px;
 }
 
+/* the flare behind the coffee mug */
 #shine {
   animation: rotation 10s infinite linear;
   width: 400px;
   height: 400px;
 }
 
+/* because one flare wasn't enough and I already figured out how to stack pngs */
 #counter_shine {
     animation: rotation 10s infinite linear;
     animation-direction: reverse;
@@ -68,6 +74,8 @@ section{
     position: relative;
     top: -380px;
 }
+
+/* makes it spinny */
 
 @keyframes rotation {
     from {transform: rotate(0deg);}
@@ -81,9 +89,24 @@ section{
     transition: all .2s ease-in-out;
 }
 
+/* makes it big */
 #cup:hover{
   transform: scale(1.4);
   cursor: pointer;
+}
+
+#cup:active{
+  animation: shake 0.5s;
+}
+
+/* makes it wobble when you click/poke it so it makes to user feel powerful */
+@keyframes shake {
+    0% { transform: scale(1.4) translate(1px, 1px) rotate(0deg); }
+    20% { transform:scale(1.4) translate(-3px, 0px) rotate(1deg); }
+    40% { transform:scale(1.4) translate(1px, -1px) rotate(1deg); }
+    60% { transform:scale(1.4) translate(-3px, 1px) rotate(0deg); }
+    80% { transform:scale(1.4) translate(-1px, -1px) rotate(1deg); }
+    100% { transform:scale(1.4) translate(1px, -2px) rotate(-1deg); }
 }
 
 #game-stats{
